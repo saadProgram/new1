@@ -20,6 +20,15 @@ model_path = "./model.keras"
 print("\n\nCurrent working directory:", os.getcwd())
 print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
 
+# Check if the file exists and print the model path
+print("\n\nModel path:", model_path)
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at {model_path}")
+
+# Check file permissions
+if not os.access(model_path, os.R_OK):
+    raise PermissionError(f"Model file at {model_path} is not readable")
+
 try:
     model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
     print("\n\nModel loaded successfully.\n\n")
