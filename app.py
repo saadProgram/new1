@@ -19,7 +19,12 @@ model_path = "/workspace/model.keras"
 # Print current working directory and list files
 print("\n\nCurrent working directory:", os.getcwd())
 print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
-model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
+
+try:
+    model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
+    print("\n\nModel loaded successfully.\n\n")
+except Exception as e:
+    print(f"\n\nAn error occurred while loading the model: {e}\n\n")
 
 # Define function to preprocess image
 def preprocess_image(image):
