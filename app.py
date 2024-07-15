@@ -14,11 +14,11 @@ Descriptions = {
     'Non MRI': 'Please add the brain MRI images if possible.'
 }
 
-current_path = os.getcwd()
-print("Current working directory:", current_path)
-
 # Load the trained model with custom objects
 model_path = "/workspace/model.keras"
+# Print current working directory and list files
+print("\n\nCurrent working directory:", os.getcwd())
+print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 # Define function to preprocess image
