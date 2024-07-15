@@ -1,0 +1,7 @@
+gunicorn
+opencv-python
+numpy
+flask
+joblib
+tensorflow==2.13.1
+tensorflow_hub
