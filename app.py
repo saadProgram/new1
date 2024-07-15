@@ -14,6 +14,9 @@ Descriptions = {
     'Non MRI': 'Please add the brain MRI images if possible.'
 }
 
+current_path = os.getcwd()
+print("Current working directory:", current_path)
+
 # Load the trained model with custom objects
 current_directory = '/workspace'
 model_relative_path = 'model/model.keras'
