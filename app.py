@@ -15,7 +15,9 @@ Descriptions = {
 }
 
 # Load the trained model with custom objects
-model_path = "model/model.keras"
+current_directory = '/workspace'
+model_relative_path = 'model/model.keras'
+model_path = os.path.join(current_directory, model_relative_path)
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 # Define function to preprocess image
