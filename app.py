@@ -15,7 +15,7 @@ Descriptions = {
 }
 
 # Load the trained model with custom objects
-model_path = "/workspace/model.keras"
+model_path = "./model.keras"
 # Print current working directory and list files
 print("\n\nCurrent working directory:", os.getcwd())
 print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
