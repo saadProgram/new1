@@ -14,8 +14,11 @@ Descriptions = {
     'Non MRI': 'Please add the brain MRI images if possible.'
 }
 
-# Load the trained model with custom objects
-model_path = "./model.keras"
+os.environ['PYTHONPATH'] = os.getcwd()
+
+# Set the environment variable for the model path using the absolute path
+model_path = os.path.join(os.environ['PYTHONPATH'], 'model.keras')
+
 # Print current working directory and list files
 print("\n\nCurrent working directory:", os.getcwd())
 print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
