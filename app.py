@@ -18,7 +18,6 @@ current_path = os.getcwd()
 print("Current working directory:", current_path)
 
 # Load the trained model with custom objects
-
 model_path = "model.keras"
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
