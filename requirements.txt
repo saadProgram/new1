@@ -2,5 +2,5 @@ gunicorn
 opencv-python-headless
 numpy
 flask
-tensorflow
+tensorflow[and-cuda]
 tensorflow_hub
