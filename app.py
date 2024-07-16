@@ -27,7 +27,7 @@ print("\n\nCurrent working directory:", os.getcwd())
 print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
 
 # Print the value of MODEL_PATH to verify
-print(f"\n\nMODEL_PATH: {model_path}\n\n")
+# print(f"\n\nMODEL_PATH: {model_path}\n\n")
 
 # Check if the file exists and print the model path
 if not os.path.exists(model_path):
@@ -40,9 +40,7 @@ if not os.access(model_path, os.R_OK):
 
 
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
-# Accessing model configuration (may provide hints about the version)
-model_config = model.get_config()
-print(f"Model configuration: {model_config}")
+
 
 # Define function to preprocess image
 def preprocess_image(image):
