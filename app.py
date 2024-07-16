@@ -39,7 +39,7 @@ if not os.access(model_path, os.R_OK):
 
 
 
-model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
+# model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 
 # Define function to preprocess image

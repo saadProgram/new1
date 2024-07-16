@@ -2,5 +2,5 @@ gunicorn
 opencv-python-headless
 numpy
 flask
-tensorflow==2.13.1
+tensorflow
 tensorflow_hub
