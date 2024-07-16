@@ -16,11 +16,11 @@ Descriptions = {
 
 # os.environ['PYTHONPATH'] = os.getcwd()
 
-# Print the value of PYTHONPATH using a shell command
-os.system('echo $PYTHONPATH')
-
 # Use an absolute path for the model
 model_path = os.path.abspath('./model/model.keras')
+
+# Retrieve the model path from the environment variable
+model_path = os.getenv('MODEL_PATH', './model/model.keras')
 
 # Print current working directory and list files
 print("\n\nCurrent working directory:", os.getcwd())
