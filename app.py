@@ -38,7 +38,9 @@ if not os.access(model_path, os.R_OK):
     raise PermissionError(f"Model file at {model_path} is not readable")
 
 
-
+# Accessing model configuration (may provide hints about the version)
+model_config = model.get_config()
+print(f"Model configuration: {model_config}")
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 # Define function to preprocess image
