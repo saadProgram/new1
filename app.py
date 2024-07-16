@@ -14,8 +14,6 @@ Descriptions = {
     'Non MRI': 'Please add the brain MRI images if possible.'
 }
 
-# os.environ['PYTHONPATH'] = os.getcwd()
-
 # Use an absolute path for the model
 model_path = os.path.abspath('./model/model.keras')
 
@@ -39,7 +37,7 @@ if not os.access(model_path, os.R_OK):
 
 
 
-# model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
+model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 
 # Define function to preprocess image
