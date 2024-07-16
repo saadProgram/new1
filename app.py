@@ -14,12 +14,31 @@ Descriptions = {
     'Non MRI': 'Please add the brain MRI images if possible.'
 }
 
-current_path = os.getcwd()
-print("Current working directory:", current_path)
+# os.environ['PYTHONPATH'] = os.getcwd()
 
-# Load the trained model with custom objects
+# Print the value of PYTHONPATH using a shell command
+os.system('echo $PYTHONPATH')
 
-model_path = "model.h5"
+# Use an absolute path for the model
+model_path = os.path.abspath('./model/model.keras')
+
+# Print current working directory and list files
+print("\n\nCurrent working directory:", os.getcwd())
+print("Available files and directories:", os.listdir(os.getcwd()), "\n\n")
+
+# Print the value of MODEL_PATH to verify
+print(f"\n\nMODEL_PATH: {model_path}\n\n")
+
+# Check if the file exists and print the model path
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at {model_path}")
+
+# Check file permissions
+if not os.access(model_path, os.R_OK):
+    raise PermissionError(f"Model file at {model_path} is not readable")
+
+
+
 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer': hub.KerasLayer})
 
 # Define function to preprocess image
